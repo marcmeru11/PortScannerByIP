@@ -1,7 +1,7 @@
 import socket
 from tqdm import tqdm
 
-def scanPort(ip, port):
+def scanPort(ip:str, port:int):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     result = s.connect_ex((ip, port))
     if result == 0:

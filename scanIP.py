@@ -1,7 +1,7 @@
 import scapy.all as scapy
 import ipaddress
 
-def scanIP(ip):
+def scanIP(ip:str):
     arp_req = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     arp_req_broadcast = broadcast/arp_req
@@ -34,4 +34,5 @@ def main():
         print("No devices found")
 
 if __name__ == "__main__":
-    main()
+    #main()
+    print(scanIP("192.168.1.1/24"))
